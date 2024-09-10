@@ -4,5 +4,3 @@ docker run -d --name graphite --network api_test_net --ip 172.18.0.4 -p 8080:80 
 
 sudo docker run -d --name graphite --network api_test_net --ip 172.18.0.4 -p 8080:80 -p 2003:2003 -v /home/alfred/k8cluster/graphite/.htpasswd:/etc/nginx/.htpasswd -v /home/alfred/k8cluster/graphite/storage/whisper:/opt/graphite/storage/whisper -v /home/alfred/k8cluster/graphite/storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf sitespeedio/graphite
 
-
-usuario alfred @Rapsberry
