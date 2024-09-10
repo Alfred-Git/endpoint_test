@@ -1,0 +1,2 @@
+# docker run -d --name robot_test --network api_test_net --ip 172.18.0.5 -p 6000:6000 robot_test
+docker run -d --name robot_test --network api_test_net --ip 172.18.0.5 robot_test

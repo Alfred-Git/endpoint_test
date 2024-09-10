@@ -1,0 +1,28 @@
+# Usa Alpine como base
+FROM alpine:latest
+
+# Actualiza el sistema y instala dependencias
+RUN apk update && apk add --no-cache \
+    python3 \
+    py3-pip \
+    build-base
+
+# Instala Flask y Requests usando pip
+RUN pip3 install flask requests
+
+# Realizo el deploy sobre la misma network que el resto de los componentes del cluster
+--network api_test_net \
+--ip 172.18.0.2 \
+
+# Copia el archivo de tu aplicación Flask (si lo tienes)
+COPY app.py /app/app.py
+
+# Define el directorio de trabajo
+WORKDIR /app
+
+# Exponer el puerto donde correrá Flask (normalmente el 5000)
+EXPOSE 5000
+
+# Comando para iniciar Flask (actualízalo si es necesario)
+CMD ["python3", "app.py"]
+

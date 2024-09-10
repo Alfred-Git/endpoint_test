@@ -1,0 +1,1 @@
+docker run -d --name endpoint_test --network api_test_net --ip 172.18.0.2 -p 5000:5000 endpoint_test
